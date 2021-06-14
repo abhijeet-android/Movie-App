@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_nav_graph"
+    app:startDestination="@id/moviesFragment">
+
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="com.abhijeet.movies.MoviesFragment"
+        android:label="@string/resources_app_name">
+        <action
+            android:id="@+id/action_moviesFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment"
+            app:enterAnim="@animator/slide_in_left"
+            app:exitAnim="@animator/slide_out_right"
+            app:popEnterAnim="@animator/slide_in_right"
+            app:popExitAnim="@animator/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.abhijeet.moviedetail.MovieDetailFragment"
+        android:label="{movie_name}">
+
+        <argument
+            android:name="movie_id"
+            app:argType="integer" />
+
+        <argument
+            android:name="movie_name"
+            app:argType="string" />
+
+    </fragment>
+
+</navigation>
